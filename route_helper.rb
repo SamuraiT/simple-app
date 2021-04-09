@@ -32,7 +32,7 @@ class Routes
         return call_controller_method(method, regex_path, controllers)
       end
 
-      return nil 
+      return nil
     end
     # Procを使っても良い。拡張性のあるコードを実現する際、Procを使うべき
     call_controller_method(method, path, controllers)
@@ -48,7 +48,7 @@ class Routes
 end
 
 
-if __FILE__ == $0 
+if __FILE__ == $0
   route = Routes.new("session-dayo")
   def index(session)
     puts "hi", session

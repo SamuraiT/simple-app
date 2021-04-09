@@ -4,7 +4,7 @@ require "csv"
 class User
   attr_accessor :name, :email, :profile, :tel
   FILENAME = "db/db.csv"
-  
+
   def initialize(name, email, profile="", tel="")
     @name = name
     @email = email
@@ -13,7 +13,7 @@ class User
   end
 
   def self.all(filename=User::FILENAME)
-    UserCollection.from_csv(filename) 
+    UserCollection.from_csv(filename)
   end
 
   def self.find(name, filename=User::FILENAME)
@@ -23,9 +23,9 @@ class User
   def detail
     <<-DETAIL
     -----------
-    name: #{@name} 
-    email: #{@email} 
-    profile: #{@profile} 
+    name: #{@name}
+    email: #{@email}
+    profile: #{@profile}
     tel: #{@tel}
     -----------
     DETAIL
@@ -71,7 +71,7 @@ class UserCollection
   end
 
   def append(user)
-    @users << user 
+    @users << user
   end
 
   def find(name)
@@ -92,7 +92,7 @@ class UserCollection
     end
 
     return puts("Not found") if found_users.empty?
-    
+
     found_users.each do |user|
       puts user.detail
     end
@@ -101,7 +101,7 @@ class UserCollection
   def [](i)
     @users
   end
-  
+
   def first
     @users[0]
   end
