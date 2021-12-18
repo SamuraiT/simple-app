@@ -2,7 +2,9 @@ require 'pry'
 require_relative "config"
 require_relative 'controller_helper'
 require_relative "app/controller/users_controller"
+require_relative "app/controller/blogs_controller"
 require_relative "models/users"
+require_relative "models/blogs"
 require 'socket'
 require 'uri'
 
@@ -18,7 +20,8 @@ loop do
   puts "#{method} #{path}"
 
   controllers = {
-    "users" => UserController.new(session, path)
+    "users" => UsersController.new(session, path),
+    "blogs" => BlogsController.new(session, path)
   }
 
   $route.set_session(session)

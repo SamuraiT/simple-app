@@ -1,5 +1,4 @@
-
-class UserController < ControllerHelper
+class UsersController < ControllerHelper
   def index
     users_table_html =  User.all.users.map do |user|
       table_template(user.name)
